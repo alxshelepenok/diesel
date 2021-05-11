@@ -1,0 +1,69 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:15.14.0
+  working_directory: ~/diesel
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm ci
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package-lock.json" }}
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run lint
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run test
+      - save_cache:
+          key: coverage-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - coverage
+
+  codecov:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          keys:
+            - coverage-{{ .Environment.CIRCLE_SHA1 }}
+      - run: ./node_modules/.bin/codecov
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - codecov:
+          requires:
+            - test
