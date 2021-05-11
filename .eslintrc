@@ -1,0 +1,49 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "jasmine": true
+  },
+  "extends": [
+    "@alxshelepenok/eslint-config",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "import",
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/test.ts",
+          "**/*.test.ts",
+          "**/test.tsx",
+          "**/tests.tsx"
+        ]
+      }
+    ],
+    "import/no-internal-modules": ["off"],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/naming-convention": ["error", {
+      "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+      "selector": "parameter",
+      "leadingUnderscore": "allow"
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
