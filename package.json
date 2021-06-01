@@ -10,7 +10,7 @@
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
   "main": "target/diesel.umd.js",
   "module": "target/diesel.es5.js",
-  "typings": "target/types/diesel.d.ts",
+  "typings": "target/types/src/index.d.ts",
   "files": [
     "target"
   ],
