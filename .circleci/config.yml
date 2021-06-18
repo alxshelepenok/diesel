@@ -5,6 +5,9 @@ defaults: &defaults
     - image: circleci/node:15.14.0
   working_directory: ~/diesel
 
+orbs:
+  codecov: codecov/codecov@1.0.5
+
 jobs:
   install:
     <<: *defaults
@@ -45,13 +48,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package-lock.json" }}
-      - restore_cache:
-          keys:
-            - coverage-{{ .Environment.CIRCLE_SHA1 }}
-      - run: ./node_modules/.bin/codecov
+      - codecov/upload:
+          file: coverage/*.json
 
 workflows:
   version: 2
