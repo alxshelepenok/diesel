@@ -1,5 +1,6 @@
 {
   "semanticCommits": "enabled",
+  "bumpVersion": "patch",
   "extends": [
     "config:js-lib",
     ":automergePatch",
