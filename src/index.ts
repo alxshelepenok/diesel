@@ -1,3 +1,3 @@
 export * from "./typings";
-export { CoilProvider } from "./provider";
-export { useCoilState, useCoilValue } from "./api";
+export * from "./provider";
+export * from "./api";
