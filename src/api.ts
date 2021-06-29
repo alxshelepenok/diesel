@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useContext, useCallback } from "react";
+import { useReducer, useEffect, useContext, useMemo } from "react";
 import { Atom, isAtom, Selector, CoilValue } from "./typings";
 import { CoilContext } from "./provider";
 import {
@@ -76,21 +76,22 @@ export const useCoilState = <T>(coilValue: CoilValue<T>) => {
   const coilId = useCoilId();
   const currentValue = useCoilValue(coilValue);
 
-  if (isAtom(coilValue)) {
-    const setter = createPublicSetAtomValue(coilId, coilValue);
-    return [currentValue, setter] as const;
-  }
+  const setter = useMemo(() => {
+    if (isAtom(coilValue)) {
+      return createPublicSetAtomValue(coilId, coilValue);
+    }
 
-  const setter = useCallback((nextValue: T) => {
-    if (coilValue.set)
-      coilValue.set(
-        {
-          get: createPublicGetCoilValue(coilId),
-          set: createPublicSetCoilValue(coilId),
-        },
-        nextValue
-      );
-  }, [coilValue, coilId]);
+    return (nextValue: T) => {
+      if (coilValue.set)
+        coilValue.set(
+          {
+            get: createPublicGetCoilValue(coilId),
+            set: createPublicSetCoilValue(coilId),
+          },
+          nextValue,
+        );
+    };
+  }, [coilId, coilValue]);
 
   return [currentValue, setter] as const;
 };
