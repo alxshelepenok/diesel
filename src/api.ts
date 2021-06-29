@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useContext } from "react";
+import { useReducer, useEffect, useContext, useCallback } from "react";
 import { Atom, isAtom, Selector, CoilValue } from "./typings";
 import { CoilContext } from "./provider";
 import {
@@ -81,7 +81,7 @@ export const useCoilState = <T>(coilValue: CoilValue<T>) => {
     return [currentValue, setter] as const;
   }
 
-  const setter = (nextValue: T) => {
+  const setter = useCallback((nextValue: T) => {
     if (coilValue.set)
       coilValue.set(
         {
@@ -90,7 +90,7 @@ export const useCoilState = <T>(coilValue: CoilValue<T>) => {
         },
         nextValue
       );
-  };
+  }, [coilValue, coilId]);
 
   return [currentValue, setter] as const;
 };
