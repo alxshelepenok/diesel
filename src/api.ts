@@ -88,7 +88,7 @@ export const useCoilState = <T>(coilValue: CoilValue<T>) => {
             get: createPublicGetCoilValue(coilId),
             set: createPublicSetCoilValue(coilId),
           },
-          nextValue,
+          nextValue
         );
     };
   }, [coilId, coilValue]);
