@@ -6,7 +6,7 @@ defaults: &defaults
   working_directory: ~/diesel
 
 orbs:
-  codecov: codecov/codecov@1.2.4
+  codecov: codecov/codecov@1.2.5
 
 jobs:
   install:
