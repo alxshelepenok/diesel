@@ -1,6 +1,6 @@
 {
   "name": "@alxshelepenok/diesel",
-  "version": "1.0.137",
+  "version": "1.0.138",
   "description": "A state management library for React",
   "repository": {
     "type": "git",
@@ -58,7 +58,7 @@
     "@semantic-release/git": "9.0.1",
     "@types/jest": "27.0.2",
     "@types/node": "14.17.27",
-    "@types/react": "17.0.30",
+    "@types/react": "17.0.31",
     "@typescript-eslint/eslint-plugin": "5.1.0",
     "@typescript-eslint/parser": "5.1.0",
     "conventional-changelog-conventionalcommits": "4.6.1",
