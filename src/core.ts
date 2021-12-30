@@ -99,17 +99,17 @@ export const registerCoilValue = <T>(
 
   if (isAtom(coilValue)) {
     coilStore[key] = {
-      type: "atom",
-      key,
       default: coilValue.default,
-      value: coilValue.default,
+      key,
       subscribers: [],
+      type: "atom",
+      value: coilValue.default,
     };
   } else {
     coilStore[key] = {
-      type: "selector",
       key,
       subscribers: [],
+      type: "selector",
     };
   }
 };

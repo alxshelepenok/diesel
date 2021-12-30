@@ -15,15 +15,15 @@
     "target"
   ],
   "scripts": {
-    "clean": "rimraf target",
-    "lint": "npm run lint:ts",
-    "format": "npm run format:ts",
-    "start": "rollup -c internal/rollup/config.ts -w",
-    "test": "jest --runInBand --config internal/jest/config.ts",
-    "lint:ts": "eslint . --ext .tsx,.ts && npx prettier --check .",
-    "format:ts": "eslint . --ext .tsx,.ts --fix && prettier --write .",
     "build": "npm run clean && tsc --module commonjs && rollup -c internal/rollup/config.ts",
-    "semantic-release": "semantic-release"
+    "clean": "rimraf target",
+    "format": "npm run format:ts",
+    "format:ts": "eslint . --ext .tsx,.ts --fix && prettier --write .",
+    "lint": "npm run lint:ts",
+    "lint:ts": "eslint . --ext .tsx,.ts && npx prettier --check .",
+    "semantic-release": "semantic-release",
+    "start": "rollup -c internal/rollup/config.ts -w",
+    "test": "jest --runInBand --config internal/jest/config.ts"
   },
   "husky": {
     "hooks": {

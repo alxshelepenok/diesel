@@ -10,9 +10,9 @@ const LIBRARY_NAME = "diesel";
 export default {
   input: "src/index.ts",
   output: [
-    { file: pkg.main, name: LIBRARY_NAME, format: "umd", sourcemap: true },
+    { file: pkg.main, format: "umd", name: LIBRARY_NAME, sourcemap: true },
     { file: pkg.module, format: "es", sourcemap: true },
   ],
-  watch: { include: "src/**" },
   plugins: [json(), typescript(), commonjs(), resolve()],
+  watch: { include: "src/**" },
 };
