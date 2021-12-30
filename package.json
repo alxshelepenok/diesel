@@ -1,6 +1,6 @@
 {
   "name": "@alxshelepenok/diesel",
-  "version": "1.0.108",
+  "version": "1.0.110",
   "description": "A state management library for React",
   "repository": {
     "type": "git",
@@ -50,7 +50,7 @@
     "rollup": "^2.47.0"
   },
   "devDependencies": {
-    "@alxshelepenok/eslint-config": "1.0.5",
+    "@alxshelepenok/eslint-config": "1.0.15",
     "@commitlint/cli": "14.1.0",
     "@commitlint/config-conventional": "14.1.0",
     "@jest/types": "27.1.1",
@@ -59,12 +59,12 @@
     "@types/jest": "27.0.2",
     "@types/node": "16.11.6",
     "@types/react": "17.0.34",
-    "@typescript-eslint/eslint-plugin": "5.3.0",
-    "@typescript-eslint/parser": "5.3.0",
+    "@typescript-eslint/eslint-plugin": "5.3.1",
+    "@typescript-eslint/parser": "5.3.1",
     "conventional-changelog-conventionalcommits": "4.6.1",
     "eslint": "8.2.0",
     "eslint-config-airbnb": "18.2.1",
-    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-config-airbnb-typescript": "16.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-import": "2.25.2",
