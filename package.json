@@ -1,6 +1,6 @@
 {
   "name": "@alxshelepenok/diesel",
-  "version": "1.0.168",
+  "version": "1.0.169",
   "description": "A state management library for React",
   "repository": {
     "type": "git",
@@ -75,7 +75,7 @@
     "jest": "27.2.5",
     "lint-staged": "11.2.6",
     "prettier": "2.6.2",
-    "prettier-plugin-packagejson": "2.2.15",
+    "prettier-plugin-packagejson": "2.2.17",
     "rimraf": "3.0.2",
     "semantic-release": "19.0.0",
     "ts-jest": "27.1.3",
