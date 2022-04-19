@@ -1,6 +1,6 @@
 {
   "name": "@alxshelepenok/diesel",
-  "version": "1.0.181",
+  "version": "1.0.182",
   "description": "A state management library for React",
   "repository": {
     "type": "git",
@@ -70,7 +70,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.3.0",
+    "eslint-plugin-react-hooks": "4.4.0",
     "husky": "7.0.4",
     "jest": "27.5.1",
     "lint-staged": "12.3.8",
