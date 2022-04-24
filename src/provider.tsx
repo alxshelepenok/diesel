@@ -4,7 +4,7 @@ import { generateCoilId } from "./core";
 export const CoilContext = React.createContext("");
 
 interface IPropsCoilProvider {
-  children: React.ReactChildren;
+  children: React.ReactNode;
 }
 
 export const CoilProvider: React.FC<IPropsCoilProvider> = (
