@@ -11,7 +11,7 @@ export type Selector<T> = {
       get: GetCoilValue;
       set: SetCoilValue;
     },
-    nextValue: T
+    nextValue: T,
   ) => void;
 };
 

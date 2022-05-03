@@ -41,7 +41,7 @@ type Callback = () => void;
 
 const useSubscribeToCoilValues = <T>(
   coilValue: CoilValue<T>,
-  callback: Callback
+  callback: Callback,
 ) => {
   const coilId = useCoilId();
 
@@ -55,7 +55,7 @@ const useSubscribeToCoilValues = <T>(
 
     const unsubscribes: Callback[] = [];
     dependencies.forEach(key =>
-      unsubscribes.push(subscribeToCoilValueUpdates(coilId, key, callback))
+      unsubscribes.push(subscribeToCoilValueUpdates(coilId, key, callback)),
     );
 
     return () => unsubscribes.forEach(unsubscribe => unsubscribe());
@@ -88,7 +88,7 @@ export const useCoilState = <T>(coilValue: CoilValue<T>) => {
             get: createPublicGetCoilValue(coilId),
             set: createPublicSetCoilValue(coilId),
           },
-          nextValue
+          nextValue,
         );
     };
   }, [coilId, coilValue]);

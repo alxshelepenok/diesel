@@ -15,22 +15,17 @@
     "target"
   ],
   "scripts": {
-    "build": "npm run clean && tsc --module commonjs && rollup -c internal/rollup/config.ts",
+    "build": "npm run clean && tsc && rollup -c internal/rollup/rollup-config.ts",
     "clean": "rimraf target",
     "format": "npm run format:ts",
     "format:ts": "eslint . --ext .tsx,.ts --fix && prettier --write .",
     "lint": "npm run lint:ts",
-    "lint:ts": "eslint . --ext .tsx,.ts && npx prettier --check .",
+    "lint:commit": "commitlint --edit",
+    "lint:staged": "lint-staged",
+    "lint:ts": "eslint . --ext .tsx,.ts && prettier --check .",
     "semantic-release": "semantic-release",
     "start": "rollup -c internal/rollup/config.ts -w",
-    "test": "jest --runInBand --config internal/jest/config.ts"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run build"
-    }
+    "test": "jest --runInBand --passWithNoTests --config internal/testing/jest-config.ts"
   },
   "commitlint": {
     "extends": [
@@ -50,17 +45,19 @@
     "rollup": "^2.71.1"
   },
   "devDependencies": {
-    "@alxshelepenok/eslint-config": "1.0.37",
-    "@commitlint/cli": "16.2.4",
-    "@commitlint/config-conventional": "16.2.4",
-    "@jest/types": "28.0.2",
+    "@alxshelepenok/eslint-config": "^1.0.37",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@jest/types": "^28.0.2",
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@types/jest": "27.5.0",
-    "@types/node": "16.11.33",
-    "@types/react": "18.0.8",
-    "@typescript-eslint/eslint-plugin": "5.22.0",
-    "@typescript-eslint/parser": "5.22.0",
+    "@swc/core": "^1.2.175",
+    "@swc/jest": "^0.2.20",
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "conventional-changelog-conventionalcommits": "4.6.3",
     "eslint": "8.14.0",
     "eslint-config-airbnb": "19.0.4",
@@ -70,17 +67,17 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.5.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "husky": "7.0.4",
-    "jest": "28.0.3",
-    "lint-staged": "12.4.1",
+    "jest": "^28.0.3",
+    "lint-staged": "^12.4.1",
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.17",
     "rimraf": "3.0.2",
     "semantic-release": "19.0.2",
-    "ts-jest": "28.0.0",
+    "ts-jest": "^28.0.1",
     "ts-node": "10.7.0",
-    "typescript": "4.6.4"
+    "typescript": "^4.6.4"
   },
   "peerDependencies": {
     "react": "^16.11.0 || ^17.0.0 || ^18.0.0"

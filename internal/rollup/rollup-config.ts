@@ -13,6 +13,6 @@ export default {
     { file: pkg.main, format: "umd", name: LIBRARY_NAME, sourcemap: true },
     { file: pkg.module, format: "es", sourcemap: true },
   ],
-  plugins: [json(), typescript(), commonjs(), resolve()],
+  plugins: [json(), typescript({ module: "esnext" }), commonjs(), resolve()],
   watch: { include: "src/**" },
 };

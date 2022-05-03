@@ -30,7 +30,7 @@ const coreGetSelectorValue = <T>(coilId: string, selector: Selector<T>): T =>
 
 export const coreGetCoilValue = <T>(
   coilId: string,
-  coilValue: CoilValue<T>
+  coilValue: CoilValue<T>,
 ): T =>
   isAtom(coilValue)
     ? coreGetAtomValue(coilId, coilValue)
@@ -49,7 +49,7 @@ export const createPublicSetAtomValue =
 const coreSetAtomValue = <T>(
   coilId: string,
   coilValue: CoilValue<T>,
-  nextValue: T
+  nextValue: T,
 ) => {
   const coreCoilValue = getCoilStore(coilId)[coilValue.key];
 
@@ -71,7 +71,7 @@ export const createPublicSetCoilValue =
 const coreSetCoilValue = <T>(
   coilId: string,
   coilValue: CoilValue<T>,
-  nextValue: T
+  nextValue: T,
 ) => {
   if (isAtom(coilValue)) {
     coreSetAtomValue(coilId, coilValue, nextValue);
@@ -81,14 +81,14 @@ const coreSetCoilValue = <T>(
         get: createPublicGetCoilValue(coilId),
         set: createPublicSetCoilValue(coilId),
       },
-      nextValue
+      nextValue,
     );
   }
 };
 
 export const registerCoilValue = <T>(
   coilId: string,
-  coilValue: CoilValue<T>
+  coilValue: CoilValue<T>,
 ) => {
   const { key } = coilValue;
   const coilStore = getCoilStore(coilId);
@@ -117,7 +117,7 @@ export const registerCoilValue = <T>(
 export const subscribeToCoilValueUpdates = (
   coilId: string,
   key: string,
-  callback: Subscriber
+  callback: Subscriber,
 ) => {
   const coilValue = getCoilStore(coilId)[key];
   const { subscribers } = coilValue;

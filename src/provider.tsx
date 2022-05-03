@@ -8,7 +8,7 @@ interface IPropsCoilProvider {
 }
 
 export const CoilProvider: React.FC<IPropsCoilProvider> = (
-  props: IPropsCoilProvider
+  props: IPropsCoilProvider,
 ) => {
   const { children } = props;
   const id = generateCoilId();
