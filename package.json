@@ -46,7 +46,7 @@
     "rollup": "^2.74.1"
   },
   "devDependencies": {
-    "@alxshelepenok/eslint-config": "^1.0.47",
+    "@alxshelepenok/eslint-config": "^1.0.48",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@jest/types": "^28.1.0",
