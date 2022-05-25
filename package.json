@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@alxshelepenok/eslint-config": "^1.0.50",
-    "@commitlint/cli": "^17.0.0",
+    "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "@jest/types": "^28.1.0",
     "@semantic-release/exec": "6.0.3",
