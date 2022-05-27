@@ -38,18 +38,15 @@
       "npm run format:ts"
     ]
   },
-  "dependencies": {
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
-    "rollup": "^2.74.1"
-  },
   "devDependencies": {
     "@alxshelepenok/eslint-config": "^1.0.52",
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
     "@jest/types": "^28.1.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@swc/core": "^1.2.194",
@@ -75,6 +72,7 @@
     "prettier": "2.6.2",
     "prettier-plugin-packagejson": "2.2.18",
     "rimraf": "3.0.2",
+    "rollup": "^2.74.1",
     "semantic-release": "19.0.2",
     "ts-jest": "^28.0.3",
     "ts-node": "10.8.0",
