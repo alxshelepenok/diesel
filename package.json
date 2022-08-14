@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@alxshelepenok/eslint-config": "^1.0.86",
+    "@alxshelepenok/eslint-config": "^1.0.87",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@jest/types": "^28.1.3",
