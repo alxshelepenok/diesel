@@ -27,9 +27,6 @@ coverage
 # eslint cache
 .eslintcache
 
-# next
-.next
-
 # dependency directory
 node_modules
 
