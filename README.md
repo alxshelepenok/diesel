@@ -1,5 +1,5 @@
-<h1 align="center">
-    <img alt="diesel" title="diesel" src="https://github.com/alxshelepenok/diesel/blob/master/documents/images/logo.svg" width="128"> </br>
+<h1>
+    <img alt="diesel" title="diesel" src="https://github.com/alxshelepenok/diesel/blob/master/documents/images/logo.svg" width="128"> <br>
     Diesel
 </h1>
 
