@@ -4,5 +4,4 @@
 !*.ts
 !*.tsx
 !*.yml
-/coverage/
 /target/
