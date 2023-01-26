@@ -1,11 +1,6 @@
-<h1 align="center">
-    <img alt="diesel" title="diesel" src="https://github.com/alxshelepenok/diesel/blob/master/documents/images/logo.svg" width="128"> <br>
-    Diesel
-</h1>
+# diesel
 
-<h4 align="center">
-  A state management library for React.
-</h4>
+A state management library for React.
 
 ## License
 
