@@ -1,6 +1,6 @@
 # diesel
 
-A state management library for React.
+State management library.
 
 ## License
 
